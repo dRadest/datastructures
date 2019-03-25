@@ -1,6 +1,13 @@
+import java.util.Random;
+
 /*
  * Implementation of Red Black Tree data structure
  * based on the Introduction to Algorithms, third edition
+ * by T. H. Cormen, et al
+ * 
+ * Author: Dante Radovani
+ * @dRadest on github
+ * 
  */
 public class RedBlackTree {
     /**
@@ -461,6 +468,19 @@ public class RedBlackTree {
         rbt.deleteByValue(10); // 10 has two children
         System.out.print("\t");
         rbt.printInorder();
+        
+        System.out.println("example3: inserting 10 random numbers in range -1000 to 1000");
+        rbt = new RedBlackTree();
+        Random rand = new Random();
+        System.out.print("\t");
+        for(int i=0; i<10; i++) {
+            int randomNum = rand.nextInt((1000 + 1000) + 1) - 1000;
+            System.out.print(randomNum + " ");
+            rbt.insertByValue(randomNum);
+        }
+        System.out.print("\n\t");
+        rbt.printInorder();
+        
                 
     }
 
